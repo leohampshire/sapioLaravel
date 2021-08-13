@@ -18,18 +18,10 @@
 <!--script src="../vendor/tightenco/ziggy/dist/index.js"></script-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-<header>
+@include('includes.header')
 
-</header>
 <main>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 d-flex justify-content-between">
-        <a class="navbar navbar-expand-lg" href="{{ route('series.index') }}">Home</a>
-        @auth
-            <a href="{{ route('sair') }}" class="text-danger">Sair</a>
-        @endauth
-        @guest
-            <a href="{{ route('entrar.index') }}" class="text">Entrar</a>
-        @endguest
     </nav>
 
     <div class="container">
