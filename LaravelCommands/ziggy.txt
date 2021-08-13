@@ -1,0 +1,5 @@
+composer require tightenco/ziggy
+
+-> Usado para passar rotas em JS
+
+https://github.com/tighten/ziggy#installation

@@ -1,0 +1,3 @@
+Para criar requests
+
+php artisan make:request SeriesFormRequest

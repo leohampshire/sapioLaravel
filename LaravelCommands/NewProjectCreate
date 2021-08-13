@@ -1,0 +1,5 @@
+Entrar na página do laravel
+https://laravel.com/docs/8.x
+
+Instalação por composer
+composer create-project laravel/laravel example-app

@@ -1,0 +1,15 @@
+Para criar o DB é necessário alterar os arquivos para as configurações desejadas
+/config/database.php
+/.env
+
+no terminal:
+php artisan make:migration criar_tabela_series
+    - Cria um arquivo em /database/migrations
+no arquivo criado:
+    montar funçoes up e down
+
+para executar as migrations:
+    - php artisan migrate
+
+sobra migrations:
+https://laravel.com/docs/8.x/migrations

@@ -1,0 +1,3 @@
+
+php artisan make:model Temporada -m
+    - -m -> Cria junto com o modelo o arquivo de migrations!

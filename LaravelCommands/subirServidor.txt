@@ -1,0 +1,4 @@
+Usando o Artisan do laravel
+
+Subindo servidor por linha de comando:
+php artisan serve
