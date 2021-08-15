@@ -1,0 +1,8 @@
+usar linha de comandos para testes automatizados
+Para rodar em linha de comando -> vendor\bin\phpunit
+
+exemplo
+$soma = 2+2
+$this->assertEquals(4, $soma);
+
+tests/Feature\ExampleTest

@@ -1,0 +1,19 @@
+Rodar na máquina de produção:
+
+composer install
+
+php artisan key:generate --show
+
+no arquivo .env
+APP_KEY=nova chave gerada
+mudar:
+    APP_ENV=prod
+        -> ajuda na performanca
+    APP_DEBUG=false
+        ->tira as páginas de erro de debug!
+
+    Alterar os dados de DB_CONECTION para usar o mysql
+
+    Rodar as migrations para criar o database
+
+

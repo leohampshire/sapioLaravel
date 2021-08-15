@@ -5,6 +5,7 @@ use App\Http\Controllers\login\RegistroControler;
 use App\Http\Controllers\Series\EpisodiosController;
 use App\Http\Controllers\Series\SeriesController;
 use App\Http\Controllers\Series\TemporadasController;
+use App\Mail\NovaSerie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,3 +70,7 @@ Route::get('/sair', function () {
     return redirect()->route('entrar.index');
 })
     ->name('sair');
+
+Route::get('/visualizando-email', function (){
+    return new NovaSerie();
+});
