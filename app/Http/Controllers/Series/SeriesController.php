@@ -7,10 +7,13 @@ namespace App\Http\Controllers\Series;
 use App\Helper\Serie\SerieHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SeriesFormRequest;
+use App\Mail\NovaSerie;
 use App\Models\Serie;
 use App\Models\Temporada;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class SeriesController extends Controller
 {
@@ -59,6 +62,8 @@ class SeriesController extends Controller
                 'mensagem',
                 "Série {$serie->nome} criada com sucesso!");
 
+        $this->sendMail($serie, $request);
+
         return redirect()
             ->route('series.index');
     }
@@ -84,5 +89,33 @@ class SeriesController extends Controller
         $serie->nome = $novoNome;
         $serie->save();
     }
+
+    /**
+     * @param Serie $serie
+     * @param SeriesFormRequest $request
+     */
+    public function sendMail(Serie $serie, SeriesFormRequest $request): string
+    {
+        //$order = Order::findOrFail($request->order_id);
+
+        $users = User::all();
+
+        foreach ($users as $user){
+            $email = new NovaSerie($serie);
+            $email->subject = "Nova série criada!";
+            Mail::to($user)->queue($email);
+
+            //sleep(5);
+        }
+
+        $email = new NovaSerie($serie);
+
+        $email->subject = "Nova série criada!";
+
+        Mail::to($request->user())->send($email);
+
+        return 'Email Enviado!';
+    }
+
 
 }

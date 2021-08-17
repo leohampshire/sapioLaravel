@@ -1,0 +1,16 @@
+usando mailtrap para teste
+
+deve-se procurar um servidor ideal para se trabalhar futuramente
+
+php artisan tinker
+Psy Shell v0.10.8 (PHP 8.0.5 — cli) by Justin Hileman
+>>> \DB::select('SELECT * FROM failed_jobs')
+=> []
+
+or php artisan queue:failed
+
+php artisan queue:retry (tira da fila de falhas e envia pra tabela de jobs)
+
+Rodar fila:
+php artisan queue:listen --tries=3  (dev)
+php artisan queue:work --tries=3    (pro)

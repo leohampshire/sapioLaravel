@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\login\EntrarController;
 use App\Http\Controllers\login\RegistroControler;
+use App\Http\Controllers\mail\MailController as MailControllerAlias;
+use App\Http\Controllers\mail\OrderShipmentController as OrderShipmentControllerAlias;
 use App\Http\Controllers\Series\EpisodiosController;
 use App\Http\Controllers\Series\SeriesController;
 use App\Http\Controllers\Series\TemporadasController;
@@ -72,5 +74,15 @@ Route::get('/sair', function () {
     ->name('sair');
 
 Route::get('/visualizando-email', function (){
-    return new NovaSerie();
+    $nome = 'Leonardo';
+    return new NovaSerie('Leonardo');
+});
+
+Route::get('/enviar-email', [OrderShipmentControllerAlias::class, 'store'])
+    ->name('emails.orders.shipped');
+
+Route::get('/mailable', function () {
+    $invoice = App\Models\Invoice::find(1);
+
+    return new App\Mail\InvoicePaid($invoice);
 });
