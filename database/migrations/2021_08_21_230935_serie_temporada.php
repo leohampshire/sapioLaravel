@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEpisodiosTable extends Migration
+class SerieTemporada extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateEpisodiosTable extends Migration
      */
     public function up()
     {
-        Schema::create('episodios', function (Blueprint $table) {
-            $table->id();
-            $table->integer('numero');
-            $table->unsignedBigInteger('temporada_id');
-            $table->timestamps();
+        Schema::table('episodios', function (Blueprint $table) {
+        $table->foreign('temporada_id')
+            ->references('id')
+            ->on('temporadas');
+        });
 
-            /*$table->foreign('temporada_id')
+        Schema::table('temporadas', function (Blueprint $table) {
+            $table->foreign('serie_id')
                 ->references('id')
-                ->on('temporadas');*/
+                ->on('series');
         });
     }
 
@@ -32,6 +33,6 @@ class CreateEpisodiosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('episodios');
+        //
     }
 }

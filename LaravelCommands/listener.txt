@@ -1,0 +1,18 @@
+
+
+Criar um listener vinculado a um evento
+php artisan make:listener EnviarEmailNovaSerieCadastrada -e NovaSerie
+
+Dentro do arquivo EventServiceProvider -> Array de Listener
+    -> Adicionar as classes de Event a serem executadas
+
+    ex:
+
+    protected $listen = [
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+        \App\Events\NovaSerie::class => [
+            \App\Listeners\EnviarEmailNovaSerieCadastrada::class
+        ],
+    ];

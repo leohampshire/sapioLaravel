@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\Series;
 
 
+use App\Events\NovaSerie as NovaSerieEvent;
 use App\Helper\Serie\SerieHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SeriesFormRequest;
@@ -98,21 +99,19 @@ class SeriesController extends Controller
     {
         //$order = Order::findOrFail($request->order_id);
 
-        $users = User::all();
+        /**
+         * Criando um Evento
+         */
+        $event = new NovaSerieEvent(
+            $serie
+        );
+        event($event);
 
-        foreach ($users as $user){
-            $email = new NovaSerie($serie);
-            $email->subject = "Nova série criada!";
-            Mail::to($user)->queue($email);
+        /**
+         * Listener criado a partir de EventService
+         */
 
-            //sleep(5);
-        }
 
-        $email = new NovaSerie($serie);
-
-        $email->subject = "Nova série criada!";
-
-        Mail::to($request->user())->send($email);
 
         return 'Email Enviado!';
     }

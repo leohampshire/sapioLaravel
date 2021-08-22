@@ -14,3 +14,9 @@ php artisan queue:retry (tira da fila de falhas e envia pra tabela de jobs)
 Rodar fila:
 php artisan queue:listen --tries=3  (dev)
 php artisan queue:work --tries=3    (pro)
+
+php artisan queue:listen --tries=3  --delay=5 (delay5seg))
+
+
+
+
