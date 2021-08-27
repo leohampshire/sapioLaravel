@@ -12,6 +12,29 @@
     <link rel="stylesheet" href="/assets/fontawesome-free-5.15.4-web/css/all.css">
 
 
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/home/reset.css">
+    <link rel="stylesheet" href="/css/home/base.css">
+    <link rel="stylesheet" href="/css/header/cabecalho.css">
+    <link rel="stylesheet" href="/css/home/chamada.css">
+    <link rel="stylesheet" href="/css/home/chamada-img.css">
+    <link rel="stylesheet" href="/css/home/destaques.css">
+    <link rel="stylesheet" href="/css/home/diferenciais.css">
+    <link rel="stylesheet" href="/css/home/parceiros.css">
+    <link rel="stylesheet" href="/css/home/sobre.css">
+    <link rel="stylesheet" href="/css/home/contato.css">
+    <link rel="stylesheet" href="/css/home/institucional.css">
+    <link rel="stylesheet" href="/css/home/rodape.css">
+    <link rel="stylesheet" href="/css/home/macrotemas.css">
+    <link rel="stylesheet" href="/css/home/macrotemas-card.css">
+    <link rel="stylesheet" href="/css/home/resources/carousel.css">
+    <link rel="stylesheet" href="/css/home/resources/card.css">
+    <link rel="stylesheet" href="/css/home/resources/row.css">
+    <link rel="stylesheet" href="/css/home/resources/button.css">
 </head>
 
 <body>
@@ -21,12 +44,9 @@
 
 @include('includes.header')
 
-<main>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 d-flex justify-content-between">
-    </nav>
-
-    <div class="container">
-        <div class="jumbotron">
+<main class="">
+    <div class="">
+        <div class="p-3" style="background: gray">
             <h1>@yield('cabecalho')</h1>
         </div>
 
@@ -35,4 +55,8 @@
         @yield('content')
     </div>
 </main>
+
+@include('includes.footer')
+
 </body>
+

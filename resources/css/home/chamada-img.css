@@ -1,0 +1,42 @@
+.chamada__img {
+    display: none;
+}
+@media screen and (min-width: 768px){
+
+    .chamada__img {
+        display: flex;
+    }
+
+    .chamada__img--prancheta1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20rem;
+    }
+
+    .chamada__img--prancheta2 {
+        position: absolute;
+        top: 16rem;
+        right: -5rem;
+        width: 38rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .chamada__img {
+    }
+
+    .chamada__img--prancheta1 {
+        position: absolute;
+        top: -4rem;
+        right: 0;
+        width: 48rem;
+    }
+
+    .chamada__img--prancheta2 {
+        position: absolute;
+        top: 8rem;
+        right: -2rem;
+        width: 46rem;
+    }
+}

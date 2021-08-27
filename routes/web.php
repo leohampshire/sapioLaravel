@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Course\CourseController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\login\EntrarController;
 use App\Http\Controllers\login\RegistroControler;
 use App\Http\Controllers\mail\MailController as MailControllerAlias;
@@ -7,6 +10,7 @@ use App\Http\Controllers\mail\OrderShipmentController as OrderShipmentController
 use App\Http\Controllers\Series\EpisodiosController;
 use App\Http\Controllers\Series\SeriesController;
 use App\Http\Controllers\Series\TemporadasController;
+use App\Http\Controllers\User\Library\UserLibraryController;
 use App\Mail\NovaSerie;
 use Illuminate\Support\Facades\Route;
 
@@ -25,9 +29,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('/dashboard', [DashboardController::class, 'index'])
+    ->name('dashboard');
 
 /*
  * Routes: Series
@@ -86,3 +90,45 @@ Route::get('/mailable', function () {
 
     return new App\Mail\InvoicePaid($invoice);
 });
+
+/*
+ * Routes: Course
+ */
+Route::get('/courses/index', [CourseController::class, 'index'])
+    ->name('courses.index')
+    //->middleware('auth')
+;
+Route::get('/courses/create-course', [courseController::class, 'create'])
+    ->name("courses.create");
+Route::post('/courses/criar-course', [courseController::class, 'store'])
+    ->name('courses.store');
+Route::delete('/courses/{id}', [courseController::class, 'destroy'])
+    ->name('courses.destroy');
+Route::post('/courses/{id}/editaNome', [courseController::class, 'editaNome'])
+    ->name('courses.editaNome');
+
+/*
+ * Routes: Library
+ */
+Route::get('/user-libraries/index', [UserLibraryController::class, 'index'])
+    ->name('user-libraries.index')
+    //->middleware('auth')
+;
+Route::get('/user-libraries/create-library', [UserLibraryController::class, 'create'])
+    ->name("user-libraries.create");
+Route::post('/user-libraries/criar-library', [UserLibraryController::class, 'store'])
+    ->name('user-libraries.store');
+Route::delete('/user-libraries/{id}', [UserLibraryController::class, 'destroy'])
+    ->name('user-libraries.destroy');
+Route::post('/user-libraries/{id}/editaNome', [UserLibraryController::class, 'editaNome'])
+    ->name('user-libraries.editaNome');
+
+/*
+ * Routes: Home
+ */
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('/', [HomeController::class, 'index'])
+    ->name('home.index');
+
+
