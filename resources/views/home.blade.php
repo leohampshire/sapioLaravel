@@ -445,7 +445,9 @@
                     </article>
                 </address>
             </div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/MXJFfIeZBc0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+            <iframe class="institucional__video" src="https://www.youtube.com/embed/MXJFfIeZBc0" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         <div class="institucional__background">
             <svg class="institucional__img--HC" xmlns="http://www.w3.org/2000/svg" width="1200" height="1200"
                  viewBox="0 0 1200 1200">
