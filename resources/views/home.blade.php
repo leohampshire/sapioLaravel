@@ -449,26 +449,6 @@
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="institucional__background">
-            <svg class="institucional__img--HC" xmlns="http://www.w3.org/2000/svg" width="1200" height="1200"
-                 viewBox="0 0 1200 1200">
-                <defs>
-                    <style>
-                        .cls-1 {
-                            fill: none;
-                            stroke: #0e172d;
-                            stroke-width: 5px;
-                            fill-rule: evenodd;
-                        }
-                    </style>
-                </defs>
-                <g id="Prancheta_1" data-name="Prancheta 1">
-                    <path class="cls-1" d="M288.851,852.5l-48.741-181.5,138.46-139.78,188.484,42.1L616.7,756.482,478.238,896.263Z"/>
-                    <path id="Shape_12_copy_2" data-name="Shape 12 copy 2" class="cls-1" d="M379.909,523.07l-48.741-181.5,138.459-139.78,188.485,42.1,49.641,183.168L569.295,566.837Z"/>
-                    <path class="cls-1" d="M555.985,829.884l66.324-67.809,78.1,18.278,17.738,4.068"/>
-                    <path id="Shape_15_copiar" data-name="Shape 15 copiar" class="cls-1" d="M810.765,446.011l-91.886-23.534L695.66,345.7l-5.347-17.4"/>
-                    <path id="Shape_12_copy_5_copiar" data-name="Shape 12 copy 5 copiar" class="cls-1" d="M626.422,756.408l-48.74-181.5,138.459-139.78,188.485,42.1L954.269,660.4,815.808,800.176Z"/>
-                </g>
-            </svg>
         </div>
     </section>
     <section class="parceiros containerTest">
