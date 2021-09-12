@@ -22,15 +22,15 @@ class CreateCourseUserLibrariesTable extends Migration
         });
 
         Schema::table('course_user_libraries', function (Blueprint $table) {
-            $table->foreign('user_library_id')
-                ->references('id')
-                ->on('user_Libraries');
-        });
-
-        Schema::table('course_user_libraries', function (Blueprint $table) {
             $table->foreign('course_id')
                 ->references('id')
                 ->on('courses');
+        });
+        
+        Schema::table('course_user_libraries', function (Blueprint $table) {
+            $table->foreign('user_library_id')
+                ->references('id')
+                ->on('user_Libraries');
         });
     }
 
