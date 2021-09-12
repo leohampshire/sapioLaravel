@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Course\Course;
 use App\Models\User\Library\UserLibrary;
+use App\Models\User\UserType;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -28,7 +29,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'user_type_id',
     ];
 
     /**
@@ -69,5 +70,10 @@ class User extends Authenticatable
     public function user_libraries()
     {
         return $this->hasMany(UserLibrary::class);
+    }
+
+    public function user_type()
+    {
+        $this->belongsTo(UserType::class);
     }
 }

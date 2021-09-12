@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserType extends Model
 {
+    public $studentType = 'STUDENT';
+    public $teacherType = 'TEACHER';
+    public $monitorType = 'MONITOR';
+    public $othersType = 'OTHER';
+
     use HasFactory;
     /**
      * The attributes that are mass assignable.
@@ -31,10 +36,9 @@ class UserType extends Model
         return $this->hasMany(User::class);
     }
 
-    public function UsersByType($id)
+    public function UsersByType($name)
     {
-        return $this->
-        return $this->hasMany(User::class);
+        return $this->hasMany(User::class)->where('name', $name);
     }
 
 }

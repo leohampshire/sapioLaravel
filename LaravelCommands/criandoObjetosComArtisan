@@ -1,3 +1,7 @@
 
 php artisan make:model Temporada -m
     - -m -> Cria junto com o modelo o arquivo de migrations!
+
+Controller
+
+php artisan make:controller Test/TestController --api

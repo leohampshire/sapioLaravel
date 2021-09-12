@@ -1,0 +1,22 @@
+Seeders inserem dados no banco de dados sempre que reinicializado (exemplo,  tipos de usuário,  usuário admin, ...)
+
+php artisan make:seeder UsersTableSeeder
+
+# php artisan: Execução do helper artisan com o PHP
+# make:seeder: Use o artisan para criar uma seeder
+# usersTableSeeder: Nome da seeder (<tabela>TableSeeder)
+
+Adicionar uma call no run do arquivo database/DatabaseSeeder.php
+php artisan db:seed
+
+ou rodar o arquivo específico
+php artisan db:seed --class=UsersTypeSeeder
+
+# Rodar migrations e inserir dados
+php artisan migrate --seed
+
+# Dar um refresh no DB e inserir os dados
+php artisan migrate:refresh --seed
+
+# Dropar todas as tabelas e criar novamente com os registros
+php artisan migrate:fresh --seed
