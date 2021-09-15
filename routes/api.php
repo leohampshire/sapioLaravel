@@ -53,7 +53,7 @@ Route::middleware('auth:sanctum')
  */
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/users/{productId}', [UserController::class, 'show']);
-Route::post('/users', [UserController::class, 'store']);
+Route::post('/users', [UserController::class, 'store'])->name("storeUser");
 Route::post('/users/{productId}/update', [UserController::class, 'update']);
 Route::delete('/users/{productId}/delete', [UserController::class, 'destroy']);
 Route::post('/users/search/{name}', [UserController::class, 'search']);

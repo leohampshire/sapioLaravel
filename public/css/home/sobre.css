@@ -3,7 +3,7 @@
     padding-left: 6%;
     padding-top: 3rem;
     padding-bottom: 1rem;
-    background-color: var(--color-white);
+    background: var(--cor2-merlin);
 }
 
 
@@ -95,21 +95,19 @@
         margin-right: -5.2rem;
     }
 
-    .sobre__img--mulher {
-        width: 43rem;
+    .sobre__img--1 {
+        width: 32rem;
         margin-left: 3rem;
-        margin-right: -14rem;
-        margin-top: -5rem;
-    }
+        margin-right: -4rem;
+        margin-top: -11rem;    }
 
-    .sobre__img--homem {
+    .sobre__img--2 {
 
-        width: 40rem;
-        margin-left: -2rem;
-        margin-right: 8rem;
-        margin-bottom: -1rem;
-        margin-top: -3rem;
-    }
+        width: 24rem;
+        margin-left: 0rem;
+        margin-right: 3rem;
+        /* margin-top: 4rem; */
+        margin-top: -10rem;    }
 
 
     .sobre__imagem {

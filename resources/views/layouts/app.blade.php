@@ -21,7 +21,7 @@
 
 
             <!-- Page Content -->
-            <main class="container">
+            <main class="">
                 {{ $slot }}
             </main>
         </div>
@@ -30,4 +30,6 @@
 
         @livewireScripts
     </body>
+
+@include('layouts.includes.footer')
 </html>

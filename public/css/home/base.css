@@ -1,8 +1,8 @@
 :root {
-    --cor1-merlin: #202454;
+    --cor1-merlin: #384850;
     --azul-claromais-tabula:  rgba(95, 198, 197, 0.5);
-    --cor2-merlin: #70ff9c;
-    --cor3-merlin: #b7d8ff6e;
+    --cor2-merlin: #bfe9e8;
+    --cor3-merlin: white;
     /*--cor3-merlin: #495782;*/
     /*--cor3-merlin: #071746;*/
     --cor4-merlin: rgb(187 255 165);
@@ -37,6 +37,10 @@ body {
     font-family: var(--opensans);
 }
 
+main {
+    background: var(--cor2-merlin);
+}
+
 .containerTest {
     background-color: var(--color-white);
     padding-right: 6%;
@@ -64,7 +68,7 @@ body {
 
 @media screen and (min-width: 1024px) {
     body{
-        background-color: var(--cor4-merlin);
+        /*background-color: var(--cor4-merlin);*/
     }
     .containerTest {
         padding-right: 13%;

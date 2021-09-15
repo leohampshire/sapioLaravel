@@ -2,7 +2,7 @@
     --cor1-merlin: #ffffff;
     --azul-claromais-tabula:  rgba(95, 198, 197, 0.5);
     --cor2-merlin: #70ff9c;
-    --cor3-merlin: #495782;
+    --cor3-merlin: #ffffff;
     /*--cor3-merlin: #071746;*/
     --cor4-merlin: rgb(187 255 165);
     --cor5-merlin: #00000059;
@@ -37,7 +37,6 @@ body {
 }
 
 .containerTest {
-    background-color: var(--color-white);
     padding-right: 6%;
     padding-left: 6%;
 }

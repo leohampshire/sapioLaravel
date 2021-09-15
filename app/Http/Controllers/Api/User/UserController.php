@@ -58,7 +58,7 @@ class UserController extends Controller
 
         return response(
             User::query()->create(
-                $data2
+                $data
             )
         );
     }

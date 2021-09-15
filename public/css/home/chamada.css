@@ -8,7 +8,7 @@
 
     background-color: var(--cor3-merlin);
 
-    padding-top: 12.25rem;
+    padding-top: 9.25rem;
     padding-bottom: 2.5rem;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .chamada__content {
-    color: #202454;
+    color: var(--cor1-merlin);
 }
 
 .chamada__titulo {
@@ -66,7 +66,7 @@
 
     .chamada__content {
         top: -5rem;
-        left: -13rem;
+        left: -19rem;
         position: relative;
         z-index: 2;
     }

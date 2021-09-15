@@ -276,12 +276,12 @@
                     <p class="sobre__texto">Desenvolvemos aplicativos para todas as plataformas</p>
                 </div>
                 <div class="sobre__imagem">
-                    <img src="/img/sapinho-3.PNG" alt="" class="sobre__img--mulher">
+                    <img src="/img/sapinho-3.PNG" alt="" class="sobre__img--1">
                 </div>
             </div>
             <div class="sobre__scndline">
                 <div class="sobre__imagem">
-                    <img src="/img/sapinho-2.PNG" alt="" class="sobre__img--homem">
+                    <img src="/img/sapinho-2.PNG" alt="" class="sobre__img--2">
                 </div>
                 <div class="sobre__conteudo">
                     <p class="sobre__texto">Criamos aplicativos personalizados para <strong class="sobre__texto--destaque">todas as pessoas</strong>!</p>
