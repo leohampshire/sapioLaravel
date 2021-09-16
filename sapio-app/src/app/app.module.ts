@@ -11,7 +11,7 @@ import { HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
-  { path: '', component:EmployeesComponent}
+  { path: 'users', component:EmployeesComponent}
 ]
 
 @NgModule({

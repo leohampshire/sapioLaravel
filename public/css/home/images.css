@@ -19,7 +19,7 @@
     /* top: 15rem; */
     margin-left: 27rem;
     margin-bottom: -26rem;
-    margin-top: 5rem;
+    margin-top: -2rem;
     /* right: -2rem; */
     width: 37rem;
 }
@@ -54,9 +54,10 @@
         width: 46rem;
     }
     .imagem__home-4 {
-        position: absolute;
-        margin-left: -6rem;
-        margin-bottom: -21rem;
-        margin-top: -9rem;
-        width: 31rem;    }
+        /* position: absolute; */
+        margin-left: 26rem;
+        /* margin-bottom: -21rem; */
+        margin-top: -10rem;
+        /* width: 31rem; */
+    }
 }
