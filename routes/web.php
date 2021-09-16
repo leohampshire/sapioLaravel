@@ -25,9 +25,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/dashboard', [DashboardController::class, 'index'])
@@ -126,9 +126,10 @@ Route::post('/user-libraries/{id}/editaNome', [UserLibraryController::class, 'ed
 /*
  * Routes: Home
  */
-
-Route::middleware(['auth:sanctum', 'verified'])
+/*Route::middleware(['auth:sanctum', 'verified'])
     ->get('/', [HomeController::class, 'index'])
-    ->name('home.index');
+    ->name('home.index');*/
+
+Route::get('/', [HomeController::class, 'index']);
 
 

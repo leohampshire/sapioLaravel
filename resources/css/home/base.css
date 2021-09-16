@@ -33,6 +33,7 @@
 }
 
 body {
+    background: var();
     font-family: var(--opensans);
 }
 

@@ -1,10 +1,9 @@
-<x-app-layout>
+<x-guest-layout>
     <!-- Scripts -->
-
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Content Test') }}
+            {{ __('Home') }}
         </h2>
     </x-slot>
 
@@ -15,23 +14,6 @@
 
     <section class="chamada containerTest">
         <div class="chamada__img">
-            <img src="img/home/svg/Azul.svg" alt="" class="chamada__img--prancheta1">
-            <!--svg class="chamada__img--prancheta1" xmlns="http://www.w3.org/2000/svg" width="1200"
-            height="1200"
-                 viewBox="0 0 1200 1200">
-                <defs>
-                    <style>
-                        .cls-1 {
-                            fill: #5fc6c5;
-                            fill-rule: evenodd;
-                        }
-                    </style>
-                </defs>
-                <g id="Prancheta_1" data-name="Prancheta 1">
-                    <path id="Forma_1_copiar" data-name="Forma 1 copiar" class="cls-1" d="M1241.99,1057.38S918.359,1217.04,687.9,1134.73,512.509,808.594,595.084,745.179,724.722,594.462,703.371,535.636,577.81,444.759,531.8,459.7,368.736,378.656,401.012,297.967c4.36-10.9,18.418-186.256,248.919-225.011s582.219,0,582.219,0Z"/>
-                </g>
-            </svg-->
-            <!--img src="img/sapinho.PNG" alt="" class="chamada__img--prancheta2"-->
             <img src="img/svg/img__home-1.svg" alt="" class="imagem__home-4">
         </div>
         <div class="chamada__content">
@@ -475,4 +457,4 @@
     </div>
 
 
-</x-app-layout>
+</x-guest-layout>

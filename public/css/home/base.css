@@ -34,6 +34,7 @@
 }
 
 body {
+    background: var(--cor2-merlin);
     font-family: var(--opensans);
 }
 
