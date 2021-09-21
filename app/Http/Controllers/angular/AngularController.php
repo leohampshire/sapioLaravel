@@ -9,6 +9,6 @@ class AngularController extends Controller
 {
     public function index()
     {
-        return view('angular');
+        return view('angular.angular');
     }
 }

@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve --configuration=development -o",
     "build": "ng build",
-    "build:prod": "ng build --production & cp ../../../public/assets/angular/index.html ../../views/angular/angular.blade.php",
+    "build:prod": "ng build --prod && cp ../../../public/assets/angular/index.html ../../views/angular/angular.blade.php",
+    "build:prod:windows": "ng build && copy ..\\..\\..\\public\\assets\\angular\\index.html ..\\..\\views\\angular\\angular.blade.php /a",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
