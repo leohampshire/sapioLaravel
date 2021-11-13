@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\angular\AngularController;
+use App\Http\Controllers\AngularController;
 use App\Http\Controllers\Course\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -42,6 +42,7 @@ use Illuminate\Support\Facades\Route;
  * Views without Angular
  */
 
+Route::any('/ng/{any}', [AngularController::class, 'index'])->where('any', '^(?!api).*$');
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/dashboard', [DashboardController::class, 'index'])

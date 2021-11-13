@@ -1,10 +1,15 @@
 <?php
 
 use App\Http\Controllers\Api\Course\CourseController;
+use App\Http\Controllers\Api\Helpers\FileController;
 use App\Http\Controllers\Api\Product\ProductController;
 use App\Http\Controllers\Api\User\UserController;
+use App\Http\Controllers\Api\Vimeo\VimeoController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Middleware\JWTAuth;
+use http\Env\Response;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +53,7 @@ Route::middleware('auth:sanctum')
     ->post('/auth/test/logout', [AuthController::class, 'logout'])
     ->name('authLogout');
 
+
 /**
  * User
  */
@@ -72,3 +78,31 @@ Route::middleware('auth:sanctum')
 Route::middleware('auth:sanctum')
     ->delete('/courses/{productId}/delete', [CourseController::class, 'destroy']);
 //Route::resource('courses', CourseController::class);
+
+/**
+ * Testing Laravel
+ */
+
+Route::post('/auth/register', [AuthController::class, 'register']);
+Route::post('/user/authLogin', [AuthController::class, 'login']);
+Route::post('/user/login', [AuthController::class, 'login']);
+//Route::post('/user/login', [AuthController::class, 'login']);
+
+Route::middleware('jwt-auth')
+    ->post('/user/jwt-auth', function(){
+        return new JsonResponse(['success' => true], 200, ['application/json']);
+    });
+
+/**
+ * VIMEO API
+ */
+Route::group(['prefix' => 'vimeo'], function (){
+    Route::get('/upload', [VimeoController::class, 'create']);
+    Route::post('/upload', [VimeoController::class, 'store'])
+        ->name('video-upload.store');
+});
+
+/**
+ * File API
+ */
+Route::post('/file', [FileController::class, 'file']);

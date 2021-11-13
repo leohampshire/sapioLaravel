@@ -3,18 +3,22 @@
 namespace App\Models;
 
 use App\Models\Course\Course;
+use App\Models\Course\CourseUser;
+use App\Models\Course\UserCourse;
 use App\Models\User\Library\UserLibrary;
 use App\Models\User\UserType;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Laravel\Sanctum\NewAccessToken;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
@@ -70,6 +74,11 @@ class User extends Authenticatable
         return $this->hasMany(Course::class);
     }
 
+    public function user_courses()
+    {
+        return $this->hasMany(UserCourse::class);
+    }
+
     public function user_libraries()
     {
         return $this->hasMany(UserLibrary::class);
@@ -79,4 +88,15 @@ class User extends Authenticatable
     {
         $this->belongsTo(UserType::class);
     }
+
+//    public function createNewToken(string $name, array $abilities = ['*'])
+//    {
+//        $token = $this->tokens()->create([
+//            'name' => $name,
+//            'token' => hash('sha256', $plainTextToken = Str::random(40)),
+//            'abilities' => $abilities,
+//        ]);
+//
+//        return new NewAccessToken($token, $token->getKey().'|'.$plainTextToken);
+//    }
 }

@@ -3,16 +3,13 @@
 namespace App\Models\Course;
 
 use App\Models\User;
-use App\Models\User\Library\CourseUserLibrary;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class UserCourse extends Model
 {
-
     protected $fillable = [
-        'name',
-        'description',
+        'course_id',
         'user_id'
     ];
 
@@ -29,14 +26,9 @@ class Course extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function course_user_libraries()
+    public function course()
     {
-        return $this->hasMany(CourseUserLibrary::class);
-    }
-
-    public function user_courses()
-    {
-        return $this->hasMany(UserCourse::class);
+        return $this->belongsTo(Course::class);
     }
 
     /**
