@@ -88,7 +88,7 @@ class FileController extends Controller
     private function storeFile(Request $request, string $key, string $compFile): string|false
     {
         $path = $request->file($key)->storeAs('public/' . $key, $compFile);
-        $this->storeVimeo($key, $compFile);
+//        $this->storeVimeo($key, $compFile);
 
         return $path;
     }
